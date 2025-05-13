@@ -1,0 +1,16 @@
+docker pull store/oracle/database-enterprise:12.2.0.1
+
+docker run -d -p 8080:8080 -p 1521:1521 --name oracle-db store/oracle/database-enterprise:12.2.0.1
+
+El -d es para que se desatendido
+8080:8080 crea un tunel para redireccionar.
+
+docker logs oracle-db
+
+docker ps
+
+clear
+
+docker logs oracle-db
+
+docker exec -it oracle-db bash -c "source /home/oracle/.bashrc; sqlplus /nolog"
